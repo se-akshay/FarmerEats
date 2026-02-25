@@ -1,0 +1,220 @@
+import { StyleSheet } from "react-native";
+import colors from "./color";
+
+export const authTheme = {
+  brand: "#222",
+  surface: "#fff",
+  canvas: "#f3eced",
+  textPrimary: "#202020",
+  textSecondary: "#a7a7a7",
+  textMuted: "#cbcbcb",
+  inputBg: "#f3f3f3",
+  inputPlaceholder: "#b8b8b8",
+  inputBorder: "#e8e8e8",
+  socialBorder: "#ececec",
+  success: "#1bb436",
+  accent: colors.primaryOrange,
+};
+
+const authStyles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: authTheme.canvas,
+  },
+  card: {
+    flex: 1,
+    backgroundColor: authTheme.surface,
+    paddingHorizontal: 16,
+    paddingTop: 16,
+    paddingBottom: 20,
+  },
+  headerWrap: {
+    marginBottom: 8,
+  },
+  brand: {
+    height: 120,
+    fontSize: 30,
+    color: authTheme.brand,
+    marginBottom: 10,
+    fontWeight: "700",
+    paddingTop: 50,
+  },
+  stepText: {
+    color: authTheme.textSecondary,
+    fontSize: 10,
+    marginBottom: 4,
+  },
+  title: {
+    fontSize: 33,
+    fontWeight: "800",
+    color: authTheme.textPrimary,
+    marginBottom: 10,
+  },
+  subtitleRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 28,
+  },
+  subtitle: {
+    color: authTheme.textSecondary,
+    fontSize: 14,
+  },
+  subtitleAction: {
+    color: authTheme.accent,
+    fontSize: 14,
+    fontWeight: "500",
+    marginLeft: 4,
+  },
+  fieldsBlock: {
+    gap: 10,
+  },
+  fieldWrap: {
+    height: 52,
+    borderRadius: 7,
+    backgroundColor: authTheme.inputBg,
+    flexDirection: "row",
+    alignItems: "center",
+    paddingHorizontal: 14,
+  },
+  fieldIcon: {
+    width: 20,
+    alignItems: "center",
+    marginRight: 10,
+  },
+  fieldInput: {
+    flex: 1,
+    fontSize: 15,
+    color: "#383838",
+  },
+  inlineAction: {
+    marginLeft: 8,
+  },
+  inlineActionText: {
+    fontSize: 14,
+    color: authTheme.accent,
+    fontWeight: "500",
+  },
+  loginButton: {
+    height: 44,
+    borderRadius: 24,
+    backgroundColor: authTheme.accent,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 16,
+  },
+  loginButtonText: {
+    fontSize: 16,
+    color: "#fff",
+    fontWeight: "600",
+  },
+  orText: {
+    color: authTheme.textMuted,
+    fontSize: 13,
+    alignSelf: "center",
+    marginTop: 22,
+    marginBottom: 10,
+    fontWeight: "500",
+  },
+  socialRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  socialButton: {
+    width: 80,
+    height: 40,
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: authTheme.socialBorder,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  actionRow: {
+    marginTop: "auto",
+    paddingTop: 20,
+    marginBottom: 30,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 10,
+  },
+  backButton: {
+    width: 28,
+    height: 28,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  primaryButton: {
+    flex: 1,
+    height: 48,
+    borderRadius: 24,
+    backgroundColor: authTheme.accent,
+    justifyContent: "center",
+    alignItems: "center",
+    paddingHorizontal: 24,
+  },
+  primaryButtonText: {
+    fontSize: 16,
+    color: "#fff",
+    fontWeight: "600",
+  },
+  otpContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: 30,
+    marginBottom: 20,
+    gap: 8,
+  },
+  otpBox: {
+    flex: 1,
+    height: 50,
+    borderRadius: 8,
+    backgroundColor: authTheme.inputBg,
+    justifyContent: "center",
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: authTheme.inputBorder,
+  },
+  otpInput: {
+    fontSize: 20,
+    color: "#383838",
+    textAlign: "center",
+    fontWeight: "600",
+    width: "100%",
+    height: "100%",
+  },
+  centerLink: {
+    alignItems: "center",
+    marginBottom: 20,
+  },
+  centerLinkText: {
+    fontSize: 13,
+    color: authTheme.textPrimary,
+    fontWeight: "500",
+    textDecorationLine: "underline",
+  },
+  confirmWrap: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    paddingHorizontal: 20,
+    marginTop: -20,
+  },
+  checkCircle: {
+    marginBottom: 14,
+  },
+  confirmTitle: {
+    fontSize: 38,
+    fontWeight: "800",
+    color: authTheme.brand,
+    marginBottom: 10,
+  },
+  confirmDesc: {
+    fontSize: 14,
+    color: "#a8a8a8",
+    textAlign: "center",
+    lineHeight: 16,
+    maxWidth: 290,
+  },
+});
+
+export default authStyles;
