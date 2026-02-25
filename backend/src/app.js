@@ -9,7 +9,22 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (_req, res) => {
-  res.json({ success: true, message: "FarmerEats API running." });
+  res.json({
+    success: true,
+    status: "ok",
+    service: "FarmerEats Backend",
+    message: "FarmerEats API running.",
+    timestamp: new Date().toISOString(),
+  });
+});
+
+app.get("/health", (_req, res) => {
+  res.json({
+    success: true,
+    status: "ok",
+    service: "FarmerEats Backend",
+    timestamp: new Date().toISOString(),
+  });
 });
 
 app.use("/assignment/user", authRoutes);
