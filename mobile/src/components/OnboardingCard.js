@@ -23,28 +23,32 @@ export default function OnboardingCard({
       </View>
 
       <View style={styles.content}>
-        <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.description}>{item.description}</Text>
+        <View style={styles.contentTop}>
+          <Text style={styles.title}>{item.title}</Text>
+          <Text style={styles.description}>{item.description}</Text>
 
-        <View style={styles.dotsRow}>
-          {Array.from({ length: total }).map((_, i) => (
-            <View
-              key={i}
-              style={[styles.dot, i === currentIndex && styles.activeDot]}
-            />
-          ))}
+          <View style={styles.dotsRow}>
+            {Array.from({ length: total }).map((_, i) => (
+              <View
+                key={i}
+                style={[styles.dot, i === currentIndex && styles.activeDot]}
+              />
+            ))}
+          </View>
         </View>
 
-        <TouchableOpacity
-          style={[styles.button, { backgroundColor: item.color }]}
-          onPress={onJoinPress}
-        >
-          <Text style={styles.buttonText}>Join the movement!</Text>
-        </TouchableOpacity>
+        <View style={styles.actionWrap}>
+          <TouchableOpacity
+            style={[styles.button, { backgroundColor: item.color }]}
+            onPress={onJoinPress}
+          >
+            <Text style={styles.buttonText}>Join the movement!</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity onPress={onLoginPress}>
-          <Text style={styles.login}>Login</Text>
-        </TouchableOpacity>
+          <TouchableOpacity onPress={onLoginPress}>
+            <Text style={styles.login}>Login</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
@@ -57,64 +61,80 @@ const styles = StyleSheet.create({
     height: height,
   },
   imageContainer: {
-    flex: 0.8,
-    justifyContent: "flex-start",
+    flex: 1,
+    justifyContent: "flex-end",
     alignItems: "center",
-    paddingTop: 10,
+    paddingHorizontal: 8,
+    paddingTop: 8,
   },
   image: {
     width: "100%",
     height: "100%",
-    resizeMode: "cover",
+    resizeMode: "contain",
   },
   content: {
-    flex: 0.2,
+    flex: 1,
     backgroundColor: "#fff",
-    paddingHorizontal: 24,
-    paddingVertical: 25,
+    paddingHorizontal: 28,
+    paddingTop: 34,
+    paddingBottom: 46,
     alignItems: "center",
-    borderTopLeftRadius: 40,
-    borderTopRightRadius: 40,
-    marginTop: -40,
+    justifyContent: "space-between",
+    borderTopLeftRadius: 36,
+    borderTopRightRadius: 36,
+    marginTop: -18,
+  },
+  contentTop: {
+    width: "100%",
+    alignItems: "center",
+  },
+  actionWrap: {
+    width: "100%",
+    alignItems: "center",
+    marginBottom: 18,
   },
   title: {
-    fontSize: 24,
+    fontSize: 38,
     fontWeight: "bold",
-    marginBottom: 17,
+    marginBottom: 18,
   },
   description: {
-    fontSize: 15,
+    fontSize: 16,
     textAlign: "center",
     color: "#555",
-    marginBottom: 10,
-    height: 30,
+    marginBottom: 20,
+    lineHeight: 24,
   },
   dotsRow: {
     flexDirection: "row",
-    marginBottom: 20,
+    marginBottom: 16,
   },
   dot: {
-    width: 6,
-    height: 6,
-    borderRadius: 3,
+    width: 7,
+    height: 7,
+    borderRadius: 3.5,
     backgroundColor: "#ccc",
     marginHorizontal: 4,
   },
   activeDot: {
-    backgroundColor: "#000",
+    backgroundColor: "#e35c43",
+    width: 26,
+    borderRadius: 8,
   },
   button: {
-    paddingVertical: 14,
-    paddingHorizontal: 32,
-    borderRadius: 24,
-    marginBottom: 12,
+    width: "88%",
+    paddingVertical: 16,
+    borderRadius: 28,
+    marginBottom: 14,
+    alignItems: "center",
   },
   buttonText: {
     color: "#fff",
-    fontWeight: "bold",
+    fontWeight: "600",
+    fontSize: 18,
   },
   login: {
-    fontSize: 14,
+    fontSize: 16,
     color: "#3b302c",
     textDecorationLine: "underline",
   },

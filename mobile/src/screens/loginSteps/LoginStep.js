@@ -11,6 +11,7 @@ export default function LoginStep({
   onChange,
   onForgotPress,
   onLoginPress,
+  onCreateAccountPress,
 }) {
   return (
     <>
@@ -18,6 +19,7 @@ export default function LoginStep({
         title="Welcome back!"
         subtitle="New here?"
         subtitleAction="Create account"
+        onSubtitleActionPress={onCreateAccountPress}
       />
 
       <View style={authStyles.fieldsBlock}>

@@ -15,8 +15,7 @@ import {
   Ionicons,
   MaterialIcons,
 } from "@expo/vector-icons";
-
-const REGISTER_ENDPOINT = "https://sowlab.com/assignment/user/register";
+import { AUTH_ENDPOINTS } from "../constants/api";
 
 const DAY_CONFIG = [
   { label: "M", key: "mon" },
@@ -278,7 +277,7 @@ export default function SignupFlowScreen({ onLoginPress }) {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(REGISTER_ENDPOINT, {
+      const response = await fetch(AUTH_ENDPOINTS.register, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { Alert, SafeAreaView, View } from "react-native";
+import { AUTH_ENDPOINTS } from "../constants/api";
 import { LOGIN_STEPS, OTP_LENGTH } from "../constants/authFlow";
 import authStyles from "../styles/authStyles";
 import ForgotPasswordStep from "./loginSteps/ForgotPasswordStep";
@@ -7,13 +8,6 @@ import LoginStep from "./loginSteps/LoginStep";
 import ResetPasswordStep from "./loginSteps/ResetPasswordStep";
 import SuccessStep from "./loginSteps/SuccessStep";
 import VerifyOtpStep from "./loginSteps/VerifyOtpStep";
-
-const LOGIN_ENDPOINT = "https://sowlab.com/assignment/user/login";
-const FORGOT_PASSWORD_ENDPOINT =
-  "https://sowlab.com/assignment/user/forgot-password";
-const VERIFY_OTP_ENDPOINT = "https://sowlab.com/assignment/user/verify-otp";
-const RESET_PASSWORD_ENDPOINT =
-  "https://sowlab.com/assignment/user/reset-password";
 
 const initialForm = {
   email: "",
@@ -23,7 +17,7 @@ const initialForm = {
   confirmPassword: "",
 };
 
-export default function LoginFlowScreen() {
+export default function LoginFlowScreen({ onCreateAccountPress }) {
   const [step, setStep] = useState(LOGIN_STEPS.LOGIN);
   const [form, setForm] = useState(initialForm);
   const [otp, setOtp] = useState(Array(OTP_LENGTH).fill(""));
@@ -92,7 +86,7 @@ export default function LoginFlowScreen() {
         social_id: "0imfnc8mVLWwsAawjYr4Rx-Af50DDqtlx",
       };
 
-      const response = await fetch(LOGIN_ENDPOINT, {
+      const response = await fetch(AUTH_ENDPOINTS.login, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -130,7 +124,7 @@ export default function LoginFlowScreen() {
     setIsSendingOtp(true);
 
     try {
-      const response = await fetch(FORGOT_PASSWORD_ENDPOINT, {
+      const response = await fetch(AUTH_ENDPOINTS.forgotPassword, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -179,7 +173,7 @@ export default function LoginFlowScreen() {
     setIsVerifyingOtp(true);
 
     try {
-      const response = await fetch(VERIFY_OTP_ENDPOINT, {
+      const response = await fetch(AUTH_ENDPOINTS.verifyOtp, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -241,7 +235,7 @@ export default function LoginFlowScreen() {
     setIsResettingPassword(true);
 
     try {
-      const response = await fetch(RESET_PASSWORD_ENDPOINT, {
+      const response = await fetch(AUTH_ENDPOINTS.resetPassword, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -286,6 +280,7 @@ export default function LoginFlowScreen() {
             onChange={updateForm}
             onForgotPress={handlers.goToForgotPassword}
             onLoginPress={handleLogin}
+            onCreateAccountPress={onCreateAccountPress}
           />
         )}
 

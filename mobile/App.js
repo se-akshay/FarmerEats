@@ -13,7 +13,9 @@ export default function App() {
   const [screen, setScreen] = useState(SCREENS.ONBOARDING);
 
   if (screen === SCREENS.LOGIN) {
-    return <LoginFlowScreen />;
+    return (
+      <LoginFlowScreen onCreateAccountPress={() => setScreen(SCREENS.SIGNUP)} />
+    );
   }
 
   if (screen === SCREENS.SIGNUP) {

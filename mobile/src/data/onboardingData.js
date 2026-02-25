@@ -12,7 +12,7 @@ export const onboardingData = [
       title: "Convenient",
       description:
         "Our team ensures quick delivery from farm to your doorstep.",
-      image: require("../../assets/onboarding/image1.png"),
+      image: require("../../assets/onboarding/image2.png"),
       color: "#D97A63"
     },
     {
@@ -20,7 +20,7 @@ export const onboardingData = [
       title: "Local",
       description:
         "We support local farmers and reduce carbon footprint.",
-      image: require("../../assets/onboarding/image1.png"),
+      image: require("../../assets/onboarding/image3.png"),
       color: "#E6B85C"
     }
   ];
